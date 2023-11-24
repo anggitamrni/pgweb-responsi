@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Denpasar Tourism</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: rgba(222, 197, 114, 0.171)
+    }
+
+    .card {
+      background-color: #f8f8f8;
+      /* Warna latar belakang card */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+    }
+
+    #video-container {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      /* 100% viewport height */
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      z-index: 2;
+    }
+
+    #navbar {
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Warna latar belakang dengan transparansi */
+      padding: 15px;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+    #navbar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      margin: 0 10px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+
+    #navbar a:hover {
+      color: #ffcc00;
+      /* Ubah warna saat dihover */
+    }
+
+    #content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 4em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+
+    #myBtn {
+      width: 100px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      background: rgb(101, 169, 197);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #myBtn:hover {
+      background: #ddd;
+      color: rgb(189, 178, 178);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .social-icon {
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+
+    .social-icon img {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="header">
+    <div id="video-container">
+      <video autoplay muted loop>
+        <source src="bali2.mp4" type="video/mp4">
+      </video>
+
+      <div id="navbar">
+        <a href="gktourism.html">Destination</a>
+        <a href="culinary.html">Culinary</a>
+        <a href="hotels.html">Hotels</a>
+        <a href="about.html">About</a>
+      </div>
+
+      <div id="content">
+        <h1>You will love every corner of it</h1>
+        <button id="myBtn" onclick="myFunction()">Near Me</button>
+      </div>
+      <script>
+        function myFunction() {
+          // Ganti 'halaman-baru.html' dengan URL halaman yang ingin Anda tuju
+          window.location.href = 'gktourism.html';
+        }
+      </script>
+  </section>
+  <section id="cards">
+    <div class="container">
+      <div class="card-item">
+        <div class="card-info">
+          <h3>About Denpasar</h3>
+          <p>Gemerlapnya kota penuh budaya di pulau Dewata, Bali, memancarkan pesona yang memukau para
+            pengunjung dari seluruh dunia. </p>
+        </div>
+        <div class="card-item"><iframe width="500" height="300"
+            src="https://www.youtube.com/embed/1kMv5Gxygt8?si=amE9Gd-dugO_a1pV" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="card-item">
+        <div class="card-info">
+          <h3>Denpasar History</h3>
+          <p>Kota Denpasar, ibu kota Provinsi Bali, Indonesia, memiliki sejarah yang kaya. Pada awalnya, Denpasar adalah
+            pusat pemerintahan dan perdagangan di pulau Bali. Nama "Denpasar" berasal dari kata Sanskerta yang berarti
+            "pasar utara," menggambarkan lokasinya yang strategis </p>
+        </div>
+        <div class="card-item"><iframe width="560" height="300"
+            src="https://www.youtube.com/embed/UcXG5EtuJSE?si=rLS4j0BT6b2b4e-x" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+  </section>
+  <section id="cta-card">
+    <div class="container">
+      <div class="card">
+        <a href="https://www.facebook.com/" class="social-icon" target="_blank">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/018/930/463/non_2x/tiktok-logo-tikok-icon-transparent-tikok-app-logo-free-png.png"
+            alt="Facebook Logo">
+          faairyy
+        </a>
+
+        <a href="https://instagram.com/anggitamrni?igshid=OGQ5ZDc2ODk2ZA==" class="social-icon" target="_blank">
+          <img
+            src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-stunning-instagram-logo-vector-download-for-new-7.png"
+            alt="Instagram Logo">
+          anggitamrni
+        </a>
+        <a href="https://github.com/anggitamrni/pgweb-responsi" class="social-icon" target="_blank">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+            alt="Instagram Logo">
+          anggitamrni
+        </a>
+
+      </div>
+    </div>
+  </section>
+  <section id="footer">
+    <p>
+    <h5>
+      <center><a class="created-by">Created by Anggita Maharani</a></center>
+    </h5>
+
+    <div class="container">
+      <div class="footer-info">
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .created-by {
+      color: white;
+    }
+  </style>
+
+</body>
+
+</html>

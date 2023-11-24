@@ -1,0 +1,77 @@
+/*Kembali*/
+.kembali{
+    margin: 30px 30px;
+    width: 30px;
+    height: 30px;
+}
+/*Body Background css*/
+body{
+    padding: 0;
+    margin: 0;
+}
+/*Logo*/
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Dafta form*/
+.form{
+    background-color: white;
+    max-width: 260px;
+    border-radius: 20px 20px 0px 0px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 30px 30px 30px;
+    font-family: "SEGOE UI";
+    text-align: center;
+}
+.form h2{
+    font-family: 'segoe ui';
+    font-size: 25px;
+}
+.form input{
+    background-color: lightgrey;
+    box-sizing: border-box;
+    border: 0;
+    width: 90%;
+    border-radius: 10px;
+    padding: 12px;
+    font-family: 'segoe ui';
+    font-size: 14px;
+}
+.form a{
+    text-decoration: none;
+    border: 1px solid #3399ff;
+    border-radius: 10px;
+    padding: 7px 90px;
+    font-family: 'segoe ui';
+    font-size: 14px;
+    color: #3399ff;
+}
+.form a:hover{
+    background-color: #3399ff;
+    color: white;
+    transition: 0.5s;
+}
+/*daftar sekarang*/
+.daftar{ 
+    background-color:#3399ff;
+    max-width: 260px;
+    border-radius: 0px 0px 20px 20px;
+    margin-bottom: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1px 30px 1px 30px;
+    font-family: 'segoe ui';
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+.daftar a{
+    text-decoration: none;
+    color: white;
+}
