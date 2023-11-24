@@ -4,12 +4,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Covid19 Sleman</title>
+    <title>Destination</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="images/coconut-tree.svg" type="image/svg" />
 
     <!-- Search CSS Library -->
     <link rel="stylesheet" href="assets/plugins/leaflet-search/leaflet-search.css" />
@@ -60,43 +66,36 @@
             background-color: rgba(231, 238, 160, 0.171);
         }
 
-        #navbar {
-            text-align: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Warna latar belakang dengan transparansi */
-            padding: 15px;
-            box-sizing: border-box;
-            z-index: 2;
-        }
-
-        #navbar a {
-            color: #fff;
-            text-decoration: none;
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #aea1a1;
+            /* Warna latar belakang navbar */
             padding: 10px;
-            margin: 0 10px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: color 0.3s ease-in-out;
         }
 
-        #navbar a:hover {
-            color: #ffcc00;
-            /* Ubah warna saat dihover */
+        nav a {
+            color: white;
+            /* Warna teks */
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #bea9a9;
+            /* Warna latar belakang saat hover */
         }
     </style>
 </head>
 
 <body>
-    <div id="navbar">
-        <a href="gktourism.html">Destination</a>
+    <nav>
+        <a href="dashboard.html">Home</a>
+        <a href="objekwisata.html">Deskripsi Wisata</a>
         <a href="culinary.html">Culinary</a>
-        <a href="hotels.html">Hotels</a>
-        <a href="about.html">About</a>
-    </div>
+    </nav>
 
     <body>
         <div class="container">
@@ -321,10 +320,6 @@
         marker10.addTo(map);
         marker10.bindPopup("Taman Kota Lumintang");
 
-        var marker11 = L.marker([-8.6567449, 115.2507423]);
-        marker11.addTo(map);
-        marker11.bindPopup("Taman Kota Lumintang");
-
         var marker12 = L.marker([-8.6701626, 115.2164463]);
         marker12.addTo(map);
         marker12.bindPopup("Lapangan Puputan");
@@ -345,17 +340,13 @@
         marker16.addTo(map);
         marker16.bindPopup("Museum Le Mayeur");
 
-        var marker17 = L.marker([-8.642235, 115.256296]);
-        marker17.addTo(map);
-        marker17.bindPopup("Cultural Village Kertalangu");
-
         var marker18 = L.marker([-8.6565343, 115.2124193]);
         marker18.addTo(map);
         marker18.bindPopup("Pasar Badung");
 
         var marker19 = L.marker([-8.6706845, 115.2616902]);
         marker19.addTo(map);
-        marker19.bindPopup("Pasar Matahari Terbit");
+        marker19.bindPopup("Pantai Matahari Terbit");
 
         var marker20 = L.marker([-8.682463, 115.2643001]);
         marker20.addTo(map);
@@ -388,11 +379,11 @@
 
         L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);
 
-        // Plugin Search
-        var searchControl = new L.Control.Search({
+         // Plugin Search
+         var searchControl = new L.Control.Search({
             position: "topleft",
-            layer: wfsgeoserver1, //Nama variabel layer
-            propertyName: "kecamatan", //Field untuk pencarian
+            layer: gktourism, //Nama variabel layer
+            propertyName: "NAMOBJ", //Field untuk pencarian
             marker: false,
             moveToLocation: function (latlng, title, map) {
                 var zoom = map.getBoundsZoom(latlng.layer.getBounds());
@@ -472,21 +463,10 @@
         L.easyPrint({
             title: "Print",
         }).addTo(map);
-
-        /*Plugin Routing*/
-        L.Routing.control({
-            waypoints: [
-                L.latLng(-7.7438194, 110.347711),
-                L.latLng(-7.6868734, 110.339323)
-            ],
-            routeWhileDragging: true
-        }).addTo(map);
-
+        
         /* Layer Marker */
         var addressPoints = [
-            [-7.768611, 110.3686033, "RSUP Dr. Sardjito"],
-            [-7.777232, 110.3735941, "RS Panti Rapih"],
-            [-7.7839847, 110.3751158, "RS Bethesda Yogyakarta"]
+            
         ]
 
         var markers = L.markerClusterGroup();
@@ -506,7 +486,7 @@
 
     </script>
     <div class="text-center mt-2">
-        <small class="text-secondary">Departemen Teknologi Kebumian | Sistem Informasi Geografis</small>
+        <small class="text-secondary">Copyright © 2023 Denpasar Torism All right reserved</small>
     </div>
 
 </body>
