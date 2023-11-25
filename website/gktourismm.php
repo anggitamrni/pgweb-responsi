@@ -14,10 +14,11 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="images/coconut-tree.svg" type="image/svg" />
 
+    <!-- Search CSS Library -->
+    <link rel="stylesheet" href="assets/plugins/leaflet-search/leaflet-search.css" />
 
     <!-- Geolocation CSS Library for Plugin -->
     <link rel="stylesheet"
@@ -26,9 +27,21 @@
     <!-- Leaflet Mouse Position CSS Library -->
     <link rel="stylesheet" href="assets/plugins/leaflet-mouseposition/L.Control.MousePosition.css" />
 
+    <!-- Leaflet Measure CSS Library -->
+    <link rel="stylesheet" href="assets/plugins/leaflet-measure/leaflet-measure.css" />
+
+    <!-- EasyPrint CSS Library -->
+    <link rel="stylesheet" href="assets/plugins/leaflet-easyprint/easyPrint.css" />
+
     <!-- Tab browser icon -->
     <link rel="icon" type="image/x-icon" href="http://luk.staff.ugm.ac.id/logo/UGM/Resmi/Warna.gif">
 
+    <!-- Marker Cluster -->
+    <link rel="stylesheet" href="assets/plugins/leaflet-markercluster/MarkerCluster.css">
+    <link rel="stylesheet" href="assets/plugins/leaflet-markercluster/MarkerCluster.Default.css">
+
+    <!--Routing-->
+    <link rel="stylesheet" href="assets/plugins/leaflet-routing/leaflet-routing-machine.css" />
     <style>
         #map {
             height: 97.5vh;
@@ -109,6 +122,17 @@
 
     <!-- Leaflet Measure JavaScript Library -->
     <script src="assets/plugins/leaflet-measure/leaflet-measure.js"></script>
+
+    <!-- EasyPrint JavaScript Library -->
+    <script src="assets/plugins/leaflet-easyprint/leaflet.easyPrint.js"></script>
+
+    <!-- Marker Cluster -->
+    <script src="assets/plugins/leaflet-markercluster/leaflet.markercluster.js"></script>
+    <script src="assets/plugins/leaflet-markercluster/leaflet.markercluster-src.js"></script>
+
+    <!--Routing-->
+    <script src="assets/plugins/leaflet-routing/leaflet-routing-machine.js"></script>
+    <script src="assets/plugins/leaflet-routing/leaflet-routing-machine.min.js"></script>
 
     <script>
         var gktourism = L.geoJson(null, {
@@ -251,91 +275,34 @@
 
         basemap4.addTo(map);
 
-        /* Layer Marker */
-        var marker1 = L.marker([-8.6947455, 115.2389268]);
-        marker1.addTo(map);
-        marker1.bindPopup("Pantai Sanur");
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "penduduk";
+        $conn = new mysqli($servername, $username, $password, $dbname);
 
-        var marker2 = L.marker([-8.6717295, 115.2313271]);
-        marker2.addTo(map);
-        marker2.bindPopup("Monumen Bajra Sandhi");
-
-        var marker3 = L.marker([-8.6843509, 115.2542887]);
-        marker3.addTo(map);
-        marker3.bindPopup("Pantai Sindhu");
-
-        var marker4 = L.marker([-8.6565619, 115.2162428]);
-        marker4.addTo(map);
-        marker4.bindPopup("Pura Agung Jagathanata");
-
-        var marker5 = L.marker([-8.7167057, 115.2026863]);
-        marker5.addTo(map);
-        marker5.bindPopup("Up Side Down World Bali");
-
-        var marker6 = L.marker([-8.7167057, 115.2026863]);
-        marker6.addTo(map);
-        marker6.bindPopup("Up Side Down World Bali");
-
-        var marker7 = L.marker([-8.6422297, 115.2537211]);
-        marker7.addTo(map);
-        marker7.bindPopup("Desa Wisata Kertalangu");
-
-        var marker8 = L.marker([-8.6556162, 115.2312965]);
-        marker8.addTo(map);
-        marker8.bindPopup("Taman Werdhi Budaya Art Centre");
-
-        var marker9 = L.marker([-8.6634014, 115.237866]);
-        marker9.addTo(map);
-        marker9.bindPopup("Museum Lukisan Sidik Jari");
-
-        var marker10 = L.marker([-8.7217769, 115.2359576]);
-        marker10.addTo(map);
-        marker10.bindPopup("Objek Wisata Hiu");
-
-        var marker10 = L.marker([-8.6359165, 115.2104126]);
-        marker10.addTo(map);
-        marker10.bindPopup("Taman Kota Lumintang");
-
-        var marker12 = L.marker([-8.6701626, 115.2164463]);
-        marker12.addTo(map);
-        marker12.bindPopup("Lapangan Puputan");
-
-        var marker13 = L.marker([-8.6340102, 115.1877331]);
-        marker13.addTo(map);
-        marker13.bindPopup("Gunung Catur");
-
-        var marker14 = L.marker([-8.7288887, 115.2333333]);
-        marker14.addTo(map);
-        marker14.bindPopup("Serangan Island");
-
-        var marker15 = L.marker([-8.7125547, 115.251775]);
-        marker15.addTo(map);
-        marker15.bindPopup("Pantai Mertasari");
-
-        var marker16 = L.marker([-8.6748773, 115.2636777]);
-        marker16.addTo(map);
-        marker16.bindPopup("Museum Le Mayeur");
-
-        var marker18 = L.marker([-8.6565343, 115.2124193]);
-        marker18.addTo(map);
-        marker18.bindPopup("Pasar Badung");
-
-        var marker19 = L.marker([-8.6706845, 115.2616902]);
-        marker19.addTo(map);
-        marker19.bindPopup("Pantai Matahari Terbit");
-
-        var marker20 = L.marker([-8.682463, 115.2643001]);
-        marker20.addTo(map);
-        marker20.bindPopup("Pasar Segara Ayu");
-
-        /* Judul dan Subjudul */
-        var title = new L.Control();
-        title.onAdd = function (map) {
-            this._div = L.DomUtil.create('div', 'info');
-            this.update();
-            return this._div;
-
-        };
+        if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+        }
+        
+        $sql = "SELECT * FROM data";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $lat = $row["latitude"];
+                $long = $row["longitude"];
+                $info = $row["wisata_denpasar"];
+                // $gambar = $row["nama"];
+                echo "L.marker([$lat, $long]).addTo(map).bindPopup('$info');";
+            } 
+        }
+        else {
+            echo "0 results";
+        }
+            $conn->close();
+    ?>
 
         /* Control Layer */
         var baseMaps = {

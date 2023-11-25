@@ -14,9 +14,6 @@
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="images/coconut-tree.svg" type="image/svg" />
 
-    <!-- Search CSS Library -->
-    <link rel="stylesheet" href="assets/plugins/leaflet-search/leaflet-search.css" />
-
     <!-- Geolocation CSS Library for Plugin -->
     <link rel="stylesheet"
         href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.css" />
@@ -24,21 +21,9 @@
     <!-- Leaflet Mouse Position CSS Library -->
     <link rel="stylesheet" href="assets/plugins/leaflet-mouseposition/L.Control.MousePosition.css" />
 
-    <!-- Leaflet Measure CSS Library -->
-    <link rel="stylesheet" href="assets/plugins/leaflet-measure/leaflet-measure.css" />
-
-    <!-- EasyPrint CSS Library -->
-    <link rel="stylesheet" href="assets/plugins/leaflet-easyprint/easyPrint.css" />
-
     <!-- Tab browser icon -->
     <link rel="icon" type="image/x-icon" href="http://luk.staff.ugm.ac.id/logo/UGM/Resmi/Warna.gif">
 
-    <!-- Marker Cluster -->
-    <link rel="stylesheet" href="assets/plugins/leaflet-markercluster/MarkerCluster.css">
-    <link rel="stylesheet" href="assets/plugins/leaflet-markercluster/MarkerCluster.Default.css">
-
-    <!--Routing-->
-    <link rel="stylesheet" href="assets/plugins/leaflet-routing/leaflet-routing-machine.css" />
     <style>
         #map {
             height: 97.5vh;
@@ -117,20 +102,6 @@
     <!-- Leaflet Mouse Position JavaScript Library -->
     <script src="assets/plugins/leaflet-mouseposition/L.Control.MousePosition.js"></script>
 
-    <!-- Leaflet Measure JavaScript Library -->
-    <script src="assets/plugins/leaflet-measure/leaflet-measure.js"></script>
-
-    <!-- EasyPrint JavaScript Library -->
-    <script src="assets/plugins/leaflet-easyprint/leaflet.easyPrint.js"></script>
-
-    <!-- Marker Cluster -->
-    <script src="assets/plugins/leaflet-markercluster/leaflet.markercluster.js"></script>
-    <script src="assets/plugins/leaflet-markercluster/leaflet.markercluster-src.js"></script>
-
-    <!--Routing-->
-    <script src="assets/plugins/leaflet-routing/leaflet-routing-machine.js"></script>
-    <script src="assets/plugins/leaflet-routing/leaflet-routing-machine.min.js"></script>
-
     <script>
         var gktourism = L.geoJson(null, {
             pointToLayer: function (feature, latlng) {
@@ -139,29 +110,25 @@
                 });
             },
             onEachFeature: function (feature, layer) {
-                var content = "Nama Kecamatan : " + feature.properties.kecamatan + "<br>" +
-                    "Status Aktif Covid : " + feature.properties.aktif + "<br>" +
-                    "Jumlah Meninggal : " + feature.properties.meninggal + "<br>" +
-                    "Jumlah Sembuh : " + feature.properties.sembuh + "<br>" +
-                    "<img src= 'gambar/sleman.png' width='50', height='50'>";
+                var content = "Nama Kecamatan : " + feature.properties.NAMOBJ + "<br>" +
+                    "<img src= 'images/logo.png' width='50', height='50'>";
 
                 layer.on({
                     click: function (e) {
-                        wfsgeoserver1.bindPopup(content).openPopup();
+                        gktourism.bindPopup(content).openPopup();
                     },
                     mouseover: function (e) {
-                        wfsgeoserver1
+                        gktourism
                             .bindTooltip(feature.properties.kecamatan)
                             .openTooltip();
                     },
                     mouseout: function (e) {
-                        wfsgeoserver1.closePopup();
-                        wfsgeoserver1.closeTooltip();
+                        gktourism.closePopup();
+                        gktourism.closeTooltip();
                     },
                 });
             },
         });
-
 
         $.getJSON("gktourism.php", function (data) {
             gktourism.addData(data);
@@ -403,22 +370,6 @@
             })
             .addTo(map);
 
-        /*Plugin Measurement Tool */
-        var measureControl = new L.Control.Measure({
-            position: "topleft",
-            primaryLengthUnit: "meters",
-            secondaryLengthUnit: "kilometers",
-            primaryAreaUnit: "hectares",
-            secondaryAreaUnit: "sqmeters",
-            activeColor: "#FF0000",
-            completedColor: "#00FF00",
-        });
-        measureControl.addTo(map);
-
-        /*Plugin EasyPrint */
-        L.easyPrint({
-            title: "Print",
-        }).addTo(map);
 
         /* Layer Marker */
         var addressPoints = [
