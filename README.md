@@ -15,7 +15,7 @@ Denpasar Tourism adalah laman yang menampilkan indormasi seputar tempat wisata, 
 
 ## Sumber Data
 
-- Data tentang museum dan tempat bersejarah diambil dari (https://www.pariwisata.denpasarkota.go.id/).
+- Data informasi wisata, kuliner, dan hotel diambil dari (https://www.pariwisata.denpasarkota.go.id/).
 - Data geospasial diakses melalui [InaGeoportal](https://www.inageoportal.id/), menyediakan informasi geospasial Indonesia.
 - Data titik lokasi diperoleh dari google maps ( https://www.google.com/maps), untuk informasi longitude dan latitude.
 
