@@ -21,25 +21,25 @@ Denpasar Tourism adalah laman yang menampilkan indormasi seputar tempat wisata, 
 ## Tangkapan Layar Komponen Penting Produk
 
 1. **Antarmuka Utama:**
-   ![Antarmuka Utama](screenshoot/Landing Page.png)
+   ![Antarmuka Utama](screenshoot/Landing_Page.png)
 
 2. **Halaman Wisata:**
-   ![Informasi Detail Lokasi](screenshoot/Destination Page.png)
+   ![Informasi Detail Lokasi](screenshoot/Destination_Page.png)
 
 3. **Halaman Deskripsi Wisata:**
-   ![Peta Interaktif](screenshoot/Deskripsi Wisata.png)
+   ![Peta Interaktif](screenshoot/Deskripsi_Wisata.png)
 
 4. **Halaman Kuliner:**
-   ![Peta Interaktif](screenshoot/Culiner Page.png)
+   ![Peta Interaktif](screenshoot/Culiner_Page.png)
 
 5. **Halaman Deskripsi Kuliner:**
-   ![Peta Interaktif](screenshoot/Deskripsi Kuliner.png)
+   ![Peta Interaktif](screenshoot/Deskripsi_Kuliner.png)
 
 6. **Halaman Hotel:**
-   ![Peta Interaktif](screenshoot/Hotel Page.png)
+   ![Peta Interaktif](screenshoot/Hotel_Page.png)
 
 7. **Halaman Deskripsi Hotel:**
-   ![Peta Interaktif](screenshoot/Deskripsi Hotel.png)
+   ![Peta Interaktif](screenshoot/Deskripsi_Hotel.png)
 
 ## Demo Produk
 
